@@ -1,0 +1,21 @@
+div{
+    display: inline-block;
+    margin: 10px 20px 0px 10px;
+    padding: 40px;
+}
+
+.div_first {
+    background-color: aqua;
+}
+.div_second {
+    background-color: aquamarine;
+}
+.div_third {
+    background-color: black;
+}
+.div_fourth {
+    background-color: blue;
+}
+.div_fifth {
+    background-color: beige;
+}
