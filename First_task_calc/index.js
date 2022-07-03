@@ -38,7 +38,7 @@ function min() {
     number1 = document.getElementById('num1').value;
     number2 = document.getElementById('num2').value;
 
-    let result = number1 - number2;
+    let result = +number1 - +number2;
     document.getElementById('out').innerHTML = result;
 }
 
@@ -50,7 +50,7 @@ function mult() {
     number1 = document.getElementById('num1').value;
     number2 = document.getElementById('num2').value;
 
-    let result = number1 * number2;
+    let result = +number1 * +number2;
     document.getElementById('out').innerHTML = result;
 }
 
@@ -62,6 +62,12 @@ function div() {
     number1 = document.getElementById('num1').value;
     number2 = document.getElementById('num2').value;
 
-    let result = number1 / number2;
+
+    let result = +number1 / +number2;
+
+    if (number2 == 0) {
+        alert('На ноль делить нельзя');
+    }
+
     document.getElementById('out').innerHTML = result;
 }

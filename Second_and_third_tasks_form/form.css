@@ -1,0 +1,171 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    line-height: 1;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    flex-wrap: wrap;
+}
+
+[class*="__container"] {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.nav-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.menu-list{
+    display: flex;
+    justify-content: center;
+}
+.list_element{
+    margin-right: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+select{
+    font-family: Poppins;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-left: 60px;
+}
+
+ul li a {
+    color: #45494a;
+}
+
+.main__container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-form {
+    margin-top: 100px;
+    background-color: white;
+    width: 600px;
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    padding: 1rem;
+    border-width: 3px;
+    border-style: solid;
+    border-image: 
+    linear-gradient(
+        to bottom, 
+        rgb(255, 0, 255), 
+        rgba(0, 0, 0, 0)
+    ) 1 100%;
+}
+.form-field{
+    padding-bottom: 8px;
+}
+.form-sign{
+    color: #45494a;
+    font-weight: 600;
+}
+.form-sign:hover{
+    color: black;
+}
+.form-sign_blue{
+    color: #a27d83;
+}
+.form-sign_blue:hover{
+    color: rgb(143, 122, 125);
+}
+input{
+    border: 1px solid #C0C6C9;
+    height: 20px;
+    font-family: Poppins;
+    border-radius: 3px;
+}
+#error{
+    color: red;
+    font-size: 10px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+button{
+    font-size: 20px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: Poppins;
+}
+button:hover{
+    background-color: rgba(220, 220, 220, 0.656);
+    color: grey;
+}
+
+.main-social{
+    width: 190px;
+}
+.social-textsignup{
+    margin: 0px 0px 10px 0px;
+}
+.social-textsubmit{
+    font-size: 15px;
+    margin: 10px 0px;
+}
