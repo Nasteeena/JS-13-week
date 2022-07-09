@@ -19,55 +19,31 @@ function div() {
     alert(+a / +b);
 }*/
 
+let number1 = document.getElementById('num1');
+let number2 = document.getElementById('num2');
+
 
 function sum() {
-    let number1;
-    let number2;
-
-    number1 = document.getElementById('num1').value;
-    number2 = document.getElementById('num2').value;
-
-    let result = +number1 + +number2;
+    let result = +number1.value + +number2.value;
     document.getElementById('out').innerHTML = result;
 }
 
 function min() {
-    let number1;
-    let number2;
-
-    number1 = document.getElementById('num1').value;
-    number2 = document.getElementById('num2').value;
-
-    let result = +number1 - +number2;
+    let result = +number1.value - +number2.value;
     document.getElementById('out').innerHTML = result;
 }
 
 
 function mult() {
-    let number1;
-    let number2;
-
-    number1 = document.getElementById('num1').value;
-    number2 = document.getElementById('num2').value;
-
-    let result = +number1 * +number2;
+    let result = +number1.value * +number2.value;
     document.getElementById('out').innerHTML = result;
 }
 
 
 function div() {
-    let number1;
-    let number2;
-
-    number1 = document.getElementById('num1').value;
-    number2 = document.getElementById('num2').value;
-
-
-    let result = +number1 / +number2;
-
-    if (number2 == 0) {
+    let result = +number1.value / +number2.value;
+    if (number2.value == 0) {
         alert('На ноль делить нельзя');
     }
-
     document.getElementById('out').innerHTML = result;
 }

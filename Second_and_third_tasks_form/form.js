@@ -1,4 +1,5 @@
-
+let error = document.getElementById('error');
+let registrationButton = document.getElementById('btn');
 
 const firstName = document.getElementById('firstname');
 const lastName = document.getElementById('lastname');
@@ -6,7 +7,117 @@ const eMail = document.getElementById('email');
 const passWord = document.getElementById('pass');
 const passCheck = document.getElementById('passcheck');
 
-function check() {
+
+const inputErrors = {
+    name: {
+        notValue: 'Enter your first name<br>',
+        invalidValue: 'Incorrect first name',
+    },
+
+    surname: {
+        notValue: 'Enter your last name<br>',
+        invalidValue: 'Incorrect last name',
+    },
+
+    email: {
+        notValue: 'Enter your last email<br>',
+        invalidValue: 'Incorrect email',
+    },
+
+    password: {
+        notValue: 'Enter your last pasword<br>',
+        invalidValue: 'Incorrect password',
+    }
+}
+
+function checkValue(value, matchTemplate, errors) {
+        if (value === '') {
+            error.innerHTML += errors.notValue;
+            registrationButton.disabled = true;
+        } else if (value.match(matchTemplate)) {
+            error.innerHTML += '';
+            registrationButton.disabled = false;
+        } else {
+            error.innerHTML += errors.invalidValue;
+            registrationButton = true;
+        }
+    }
+
+function checkFirstName() {
+    let nameSymbols = /^[A-Za-z]+$/;
+    checkValue(firstName.value, nameSymbols, inputErrors.firstName);
+}
+
+function checkLastName() {
+    let sureNameSymbols = /^[A-Za-z]+$/;
+    checkValue(lastName.value, sureNameSymbols, inputErrors.surname);
+}
+
+function checkEmail() {
+    let emailSymbols = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    checkValue(eMail.value, emailSymbols, inputErrors.email);
+}
+
+function checkPassWord() {
+    let passWordSymbols = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+    checkValue(passWord.value, passWordSymbols, inputErrors.password);
+}
+
+function checkPassCheck() {
+    if (passCheck.value === passWord.value) {
+        error.innerHTML += 'Your passwords do not match<br>';
+        registrationButton.disabled = true;
+    } else {
+        registrationButton.disabled = false;
+    }
+}
+
+function welcome() {
+    if (firstName.value && lastName.value && eMail.value && passWord.value === passCheck.value) {
+        alert(`Добро пожаловать, ${firstName.value} ${lastName.value}!`);
+    }
+}
+
+
+registrationButton.addEventListener('click', function () {
+
+    error.innerHTML = '';
+
+    checkFirstName();
+    checkLastName();
+    checkEmail();
+    checkPassWord();
+    checkPassCheck();
+    welcome();
+});
+
+firstName.addEventListener('input', () => {
+    error.innerHTML = '';
+    checkFirstName();
+});
+
+lastName.addEventListener('input', () => {
+    error.innerHTML = '';
+    checkLastName();
+})
+
+eMail.addEventListener('input', () => {
+    error.innerHTML = '';
+    checkEmail();
+})
+
+passWord.addEventListener('input', () => {
+    error.innerHTML = '';
+    checkPassWord();
+})
+
+passCheck.addEventListener('input', () => {
+    error.innerHTML = '';
+    checkPassCheck();
+})
+
+
+/*function check() {
 
     const firstNameValue = firstName.value;
     const lastNameValue = lastName.value;
@@ -88,4 +199,4 @@ function changeTheme() {
         document.body.style.background = 'pink';
         document.querySelector('.main-form').style.background = '#F091AD';
     } 
-}
+} */
